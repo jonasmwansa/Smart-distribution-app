@@ -1,8 +1,8 @@
 # Getting Started with Create React App
+    - the work is still i development and probably have bugs to be worked on
+    - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+###Scripts to Run
 
 In the project directory, you can run the following commands below just after cloning the repository:
 
