@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-    - the work is still i development and probably have bugs to be worked on
+    - The work is still in development and probably have bugs to be worked on
     - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ###Scripts to Run
