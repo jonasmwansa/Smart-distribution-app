@@ -4,7 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following commands below just after cloning the repository:
+
+### `npm install react-bootstrap bootstrap`
+    
+### `npm install react-icons --save`
+
+### `npm install --save react-modal`
+
+### `npm i rsuite --save`
 
 ### `npm start`
 
@@ -13,6 +21,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+
+## Structure
+
+### Smart Distribution App
+
+### Endpoints
+This work constitutes of three users listed below:
+
+- #### Admin home default
+    -  [http://localhost:3000](http://localhost:3000)
+- #### Client home
+    -  [http://localhost:3000/client](http://localhost:3000/client)
+- #### Driver home
+    -  [http://localhost:3000/driver](http://localhost:3000/driver)
 
 ### `npm test`
 
