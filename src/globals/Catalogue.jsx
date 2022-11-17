@@ -22,7 +22,7 @@ const Catalogue = ()=>{
                             <div className='item-content'>
                                 <div className="image-container">
                                     <img src={item.itemImage} className='img-fluid' alt="item" />
-                                    <span className="badge-item">{item.deliveryProgress}</span>
+                                    {/* <span className="badge-item">{item.deliveryProgress}</span> */}
                                 </div>
                                 <div className="details-item">
                                     <span><b>{item.itemName}</b></span><br/>                               

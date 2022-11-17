@@ -11,6 +11,7 @@ import DriverHome from './driver/pages/DriverHome';
 import Transfer from './customer/pages/Transfer';
 import Transfers from './driver/components/Transfers';
 import Pending from './customer/pages/Pending';
+import TransferPending from './driver/components/Pending'
 import Progress from './staff/components/Progress';
 import DriverProgress from './driver/components/Progress';
 import ConfirmedDelivery from './driver/components/ConfirmedDelivery';
@@ -41,6 +42,7 @@ function App() {
             <Route path='/driver' element={<Login loginLink='/driverHome' signupLink='/driver' />}/>
             <Route path='/driverHome/*' element={<DriverHome />}/>
             <Route path='/driver/transfer' element={<Transfers />}/>
+            <Route path='/driver/pending' element={<TransferPending />}/>
             <Route path="/driver/progress" element={<DriverProgress/>}/>
             <Route path="/confirmed" element={<ConfirmedDelivery/>}/>
 

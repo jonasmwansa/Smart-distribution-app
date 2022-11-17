@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {TbArrowBack} from 'react-icons/tb'
+import {TbArrowBack} from 'react-icons/tb';
 
 import {useParams, useNavigate, Routes, Route} from 'react-router-dom';
 import Navigation from '../staff/Navigation';
@@ -20,8 +20,10 @@ function ItemDetails(){
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     
+    
         <Routes>
             <Route path="/parcelprogress/:itemId" component={<Progress />}/>
+            {/* <Route path="/" component={<AdminHome />}/> */}
         </Routes>
 
 
@@ -46,7 +48,7 @@ return (
             <Button variant="secondary" onClick={handleClose}>
                 Cancel
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={()=>navigate(`/parcelprogress/${Data[itemId - 1].itemId}`)}>
                 Print
             </Button>
             </Modal.Footer>
@@ -77,6 +79,7 @@ return (
                     </div>
                     <div className="col-sm-12 col-md-12 col-lg-12 item-details">
                         <form>
+                            
                             <div className="form-group col-md-12">
                                 <label htmlFor="itemOwner">Receiver's Full name</label>
                                 <input 
@@ -130,6 +133,16 @@ return (
                                         
                                     />
                             </div>
+                            <div className="form-group col-md-12">
+                                <label htmlFor="deliveryProgress">Delivery Progress</label>
+                                <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    id="deliveryProgress" 
+                                    defaultValue={Data[itemId - 1].deliveryProgress}
+                                    disabled
+                                    />
+                            </div>
                             <br/>
 
                         {/* specify the button to display */}
@@ -147,11 +160,9 @@ return (
                                 >Generate track Code
                             </button>
                             :
-                            
-
                             <button 
                                 type="submit" 
-                                className="btn btn-primary "
+                                className="btn btn-primary"
                                 onClick={()=>navigate(`/parcelprogress/${Data[itemId - 1].itemId}`)}     
                                 >View progress
                             </button>

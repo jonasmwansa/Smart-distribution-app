@@ -10,6 +10,8 @@ import Data from '../../globals/data/Data';
 
 function Transfers() {
 
+  const navigate = useNavigate();
+
   const filtered = Data.filter(itemPackage => {
     return itemPackage.itemId === 2;
     
@@ -21,20 +23,66 @@ function Transfers() {
 
     const {itemId} = useParams();
     const [show, setShow] = useState(false);
+    const [showDetails, setShowDetails] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleApproval = () => setShow(true);
-
+    const showDriverDetails =()=> setShowDetails(true);
   
 
   return (
 <>
     <Navigation />
+    <Modal  show={show} 
+            onHide={()=>handleClose()} 
+            animation={false} 
+            backdrop="static"
+               keyboard={false}>
+                <Modal.Header closeButton>
+                  <Modal.Title></Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                  <div className="message-box">
+                      <div className="col-sm-12">
+                        <form className="Transfer-form">
+                          <div className="Transfer-form-content">
+                            <h3 className="Transfer-form-title">Driver Details</h3>
+                            
+                              <div className="form-group mt-3">
+                                <label htmlFor="driverUniqueId">Driver Unique Id</label>
+                                <input
+                                  type="number"
+                                  className="form-control mt-1"
+                                  placeholder="e.g 10562345"
+                                  name="driverUniqueId"
+                                />
+                              </div>
+                            </div>
+                        </form>
+                      </div>
+                  </div>
+
+              </Modal.Body>
+              <Modal.Footer>
+                  <Button variant="secondary" 
+                          onClick={()=>handleClose()}
+                  >
+                    Cancel
+                  </Button>
+                  <Button 
+                          variant="primary" 
+                          onClick={()=>navigate("/driver/pending")}
+                  >
+                      Transfer
+                  </Button>
+              </Modal.Footer>
+          </Modal>
+
  
     <div className="container">
 
             <div className="row">
-                <h4 className='text-center'>Current Transfer Request</h4>
+                <h4 className='text-center'>Issue Transfer</h4>
                 <div className="delivery-details">
                     <div className="clients-details">  
                         <h5>Details</h5>
@@ -70,33 +118,17 @@ function Transfers() {
                             <button 
                                 type="submit" 
                                 className="btn btn-primary"
-                                onClick={()=>handleApproval()}     
-                            >Approve
+                                onClick={(e)=>{
+                                       e.preventDefault()
+                                          handleApproval()
+                                }}  
+                                // onClick={()=>navigate(`/transfer/${Data[itemId - 1].itemId}`)}  
+                            >Request
                             </button>
                         </div>           
                     </form>              
             </div>
-            <Modal  show={show} 
-                onHide={()=>handleClose()} 
-                animation={false} 
-                backdrop="static"
-                keyboard={false}>
-                <Modal.Header closeButton>
-                <Modal.Title>Approve delivery point transfer</Modal.Title>
-                </Modal.Header>
-                    <Modal.Body>
-                    <h4><strong>address</strong></h4>
-                    <p>are you sure you want prove this request</p>
-                    </Modal.Body>
-                <Modal.Footer>
-                <Button variant="secondary" onClick={()=>handleClose()}>
-                    Cancel
-                </Button>
-                <Button variant="primary" onClick={()=>handleClose()}>
-                        Accept
-                </Button>
-                </Modal.Footer>
-            </Modal>
+            
           </div>
       </div>
 </div>

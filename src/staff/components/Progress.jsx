@@ -1,5 +1,6 @@
-import React, {useState} from 'react'; 
-import {useParams} from 'react-router-dom';
+import React, {useState} from 'react';
+import {useParams, useNavigate} from 'react-router-dom';
+import {TbArrowBack} from 'react-icons/tb'
 
 import Navigation from '../Navigation';
 import Delivered from './Delivered'
@@ -12,10 +13,10 @@ function Progress() {
   const [isDelivered, showDelivery] = useState(false);
   
   const {itemId} =useParams();
+  const navigate = useNavigate();
 
 
   const handleClick = () => {
-    // 👇️ toggle shown state
     Data.filter((parcel) => {
       return parcel.itemId === itemId;
     
@@ -31,12 +32,22 @@ function Progress() {
     <div>
         <Navigation />
         <div className="container">
+        
             <div className="row">
               <div className="progress-form">
                     <form className="progress-form">
                           <div className="progress-form-content">
-                            <h3 className="progress-form-title">Progress Check</h3>
-                              
+                            <div className="progress-form-title">
+                                <h3 className="title">Progress Check</h3>
+                                <div className='text-right'>
+                                    <button 
+                                    type="submit" 
+                                    className="btn btn-primary btn-sm"
+                                    onClick={()=>navigate("/adminHome")}     
+                                    ><TbArrowBack />
+                                    </button>
+                                </div>
+                            </div>
                               
                                 <div className="form-group mt-3">
                                     <label htmlFor="itemTrackingCode">Tracking code</label>
@@ -52,7 +63,9 @@ function Progress() {
                           <button 
                               type="submit" 
                               className="btn btn-primary"
-                              onClick={()=>handleClick()}     
+                              onClick={(e)=>{
+                                    e.preventDefault()
+                                    handleClick()}}     
                           > check
                           </button>
                         </div>

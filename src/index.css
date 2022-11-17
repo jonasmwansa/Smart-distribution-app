@@ -7,13 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container, .row{
+  --bs-gutter-x:0rem !important;
 }
-
-
-
 .Auth-form-container {
   display: flex;
   justify-content: center;
@@ -229,8 +225,6 @@ button .btn-link:hover{
 .clients-details{
   border: 1px solid rgb(247, 238, 238);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin-right: 1rem;
-  padding: 1rem;
   width: 30%;
 }
 
@@ -239,10 +233,6 @@ button .btn-link:hover{
   padding-top: 1rem;
 }
 
-
-.confirmed-container{
-  padding-top: 2rem;
-}
 
 table {
   counter-reset: rowNumber;
@@ -255,6 +245,21 @@ table tr::before {
   padding-right: 0.3em;
   text-align: right;
 }
+
+.progress-form-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.steps{
+  color: black;
+}
+
+.confirmed-container{
+  padding-top: 2rem;
+}
+
 /* responsiveness */
 
 @media(max-width: 768px){
@@ -300,8 +305,7 @@ table tr::before {
   .row {
     background: #e7e7e7;
     padding: 5%;
-    text-align: center;
-    width: 80%;  
+    width: 100%;  
 }
 
 .clients-details {
@@ -322,5 +326,8 @@ table tr::before {
   padding-top: 1rem;
 }
 
+.delivery-btn{
+  padding-top: 1rem;
+}
 
 }
