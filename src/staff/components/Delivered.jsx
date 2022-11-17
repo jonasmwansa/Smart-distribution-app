@@ -9,6 +9,7 @@ import Data from '../../globals/data/Data';
 // import ConfirmedDelivery from './ConfirmedDelivery';
 
 function Delivered() {
+
  const {itemId} =useParams();
 
   const filtered = Data.filter(itemPackage => {
@@ -18,27 +19,27 @@ function Delivered() {
   return (
     <div className="container">
             <div className="row">
-            <h3>Receiver's Details</h3>
+            <h4>Receiver's Details</h4>
                 <div className="delivery-details">
                     <div className="clients-details">
                         {
                           filtered.map(item => {
                               return (
                                 <div key={item.itemId}>
-                                <Steps vertical >
-                                  <Steps.Item title="Receiver Name"
-                                      icon={<FaUserCircle style={{ color: 'red' }} />}
-                                      description={item.itemReceiver} className="steps"/>
-                                  <Steps.Item title="Receiver contact" 
-                                      icon={<FaPhoneAlt style={{ color: 'green' }} />}
-                                      description={item.itemReceiverPhoneNumber} className="steps"/>
-                                  <Steps.Item title="Receiver's Email" 
-                                      icon={<MdOutlineMail style={{ color: 'blue' }} />}
-                                      description={item.itemReceiverEmailAddress}className="steps" />
+                                  <Steps vertical >
+                                    <Steps.Item title="Receiver Name"
+                                        icon={<FaUserCircle style={{ color: 'red' }} />}
+                                        description={Data[itemId - 1].itemReceiver} className="steps"/>
+                                    <Steps.Item title="Receiver contact" 
+                                        icon={<FaPhoneAlt style={{ color: 'green' }} />}
+                                        description={item.itemReceiverPhoneNumber} className="steps"/>
                                     <Steps.Item title="Receiver's Email" 
-                                      icon={<MdOutlineMail style={{ color: 'blue' }} />}
-                                      description={item.deliveryProgress}className="steps" />
-                                </Steps>
+                                        icon={<MdOutlineMail style={{ color: 'blue' }} />}
+                                        description={item.itemReceiverEmailAddress}className="steps" />
+                                      <Steps.Item title="Receiver's Email" 
+                                        icon={<MdOutlineMail style={{ color: 'blue' }} />}
+                                        description={item.deliveryProgress}className="steps" />
+                                  </Steps>
                                 </div>
                               );
                             })

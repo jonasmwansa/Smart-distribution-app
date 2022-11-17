@@ -29,23 +29,24 @@ function ItemDetails(){
 return (
     <div>
         <Navigation/>
-        <Modal  show={show} 
-                onHide={()=>handleClose()} 
+        <Modal  
+                show={show} 
+                onHide={()=>handleClose} 
                 animation={false} 
                 backdrop="static"
                 keyboard={false}>
             <Modal.Header closeButton>
-            <Modal.Title>Tracking code generated</Modal.Title>
+                <Modal.Title>Tracking code generated</Modal.Title>
             </Modal.Header>
                 <Modal.Body>
                 <h4><strong>{Data[itemId - 1].itemTrackingCode}</strong></h4>
-                <p>you can now print</p>
+                <p>you can now print the shipment details</p>
                 </Modal.Body>
             <Modal.Footer>
-            <Button variant="secondary" onClick={()=>handleClose()}>
+            <Button variant="secondary" onClick={handleClose}>
                 Cancel
             </Button>
-            <Button variant="primary" onClick={()=>handleClose()}>
+            <Button variant="primary" onClick={handleClose}>
                 Print
             </Button>
             </Modal.Footer>

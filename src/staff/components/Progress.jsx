@@ -14,14 +14,14 @@ function Progress() {
   const {itemId} =useParams();
 
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     // 👇️ toggle shown state
     Data.filter((parcel) => {
       return parcel.itemId === itemId;
     
     })
 
-    showDelivery(current => !current);
+    showDelivery(true);
     
   }
 
