@@ -139,7 +139,10 @@ return (
                             <button 
                                 type="submit" 
                                 className="btn btn-primary "
-                                onClick={()=>handleShow()}
+                                onClick={(e)=> {
+                                    e.preventDefault()
+                                    handleShow()
+                                }}
                                 >Generate track Code
                             </button>
                             :
