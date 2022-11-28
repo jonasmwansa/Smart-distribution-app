@@ -26,12 +26,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 #### Endpoints
 
-This work constitutes of three users listed below:
+This work constitutes of two users as listed below:
 
 - #### Admin home default
     -  [http://localhost:3000](http://localhost:3000)
-- #### Client home
-    -  [http://localhost:3000/client](http://localhost:3000/client)
 - #### Driver home
     -  [http://localhost:3000/driver](http://localhost:3000/driver)
 
