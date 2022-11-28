@@ -19,6 +19,7 @@ const Data =  [
           itemSenderPhoneNumber: '+26097222222',
           
           deliveryAddress:'Lusaka, Zambia',
+          pickupPoint:'kamlops, kalingalinga',
           itemSenderAddress:'chipata, zambia',
           deliveryDate:'20/11/2022',
           itemStatus:'ready',
@@ -42,6 +43,7 @@ const Data =  [
           itemSenderPhoneNumber: '+26097225555',
           
           deliveryAddress:'Lusaka, Zambia',
+          pickupPoint:'Intercity bus Terminus',
           itemSenderAddress:'Durban, South Africa',
           deliveryDate:'20/11/2022',
           itemStatus:'ready',
@@ -66,6 +68,7 @@ const Data =  [
            itemSenderPhoneNumber: '+26096225555',
            
            deliveryAddress:'Kitwe, Zambia',
+           pickupPoint:'KMB bus station',
            itemSenderAddress:'Tunduma, People\'s republic of Tanzania' ,
            deliveryDate:'20/11/2022',
            itemStatus:'ready',
@@ -90,6 +93,7 @@ const Data =  [
            itemSenderPhoneNumber: '+25096225555',
            
            deliveryAddress:'Accra, Ghana',
+           pickupPoint:'techsavvy corner',
            itemSenderAddress:'Kumasi, Ghana',
            deliveryDate:'22/11/2022',
            itemStatus:'request',
@@ -114,6 +118,7 @@ const Data =  [
            itemSenderPhoneNumber: '+23497725566',
            
            deliveryAddress:'Lagos,Nigeria',
+           pickupPoint:'the junction',
            itemSenderAddress:'Abuja, Nigeria',
            deliveryDate:'10/11/2022',
            itemStatus:'ready',

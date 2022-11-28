@@ -23,7 +23,7 @@ function ItemDetails(){
     
         <Routes>
             <Route path="/parcelprogress/:itemId" component={<Progress />}/>
-            {/* <Route path="/" component={<AdminHome />}/> */}
+            
         </Routes>
 
 
@@ -62,7 +62,7 @@ return (
                 <button 
                     type="submit" 
                     className="btn btn-primary"
-                    onClick={()=>navigate("/adminHome")}     
+                    onClick={()=>navigate("/catalogue")}     
                 ><TbArrowBack />
                 </button>
             </div>
@@ -78,74 +78,41 @@ return (
                         <h4>Details</h4>
                     </div>
                     <div className="col-sm-12 col-md-12 col-lg-12 item-details">
+                        <div>
+                        <ul className="list">
+                            <li className="data">
+                                <span className="title">Receiver Name</span>
+                                <span className="subtitle">{Data[itemId - 1].itemReceiver}</span>
+                            </li>
+                            <li className="data">
+                                <span className="title">Receiver Contact</span>
+                                <span className="subtitle">{Data[itemId - 1].itemReceiverPhoneNumber}</span>
+                            </li>
+                            <li className="data">
+                                <span className="title">Receiver Email</span>
+                                <span className="subtitle">{Data[itemId - 1].itemReceiverEmailAddress}</span>
+                            </li>
+                            <li className="data">
+                            <span className="title">Delivery Address</span>
+                            <span className="subtitle">{Data[itemId - 1].deliveryAddress}</span>
+                            </li>
+                            <li className="data">
+                                    <span className="title">Driver Name</span>
+                                    <span className="subtitle">{Data[itemId - 1].driverDetails.driverName}</span>
+                            </li>
+                            <li className="data">
+                                <span className="title">Driver's Phone</span>
+                                <span className="subtitle">{Data[itemId - 1].driverDetails.driverPhone}</span>
+                            </li>
+                            <li className="data">
+                                <span className="title">Delivery Progress</span>
+                                <span className="subtitle">{Data[itemId - 1].deliveryProgress}</span>
+                            </li>
+                        </ul>
+                        </div>
+
                         <form>
-                            
-                            <div className="form-group col-md-12">
-                                <label htmlFor="itemOwner">Receiver's Full name</label>
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    id="itemOwner" 
-                                    defaultValue={Data[itemId - 1].itemReceiver}/>
-                            </div>
-                            <div className="form-group col-md-12">
-                                <label htmlFor="ownerPhoneNumber">Receiver's Phone Number</label>
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    id="ownerPhoneNumber" 
-                                    defaultValue={Data[itemId - 1].itemReceiverPhoneNumber}/>
-                            </div>
-
-                            <div className="form-group col-md-12">
-                                <label htmlFor="emailAddress">Receiver's  Email Address</label>
-                                <input
-                                    type="text" 
-                                    className="form-control" 
-                                    id="emailAddress" 
-                                    defaultValue={Data[itemId - 1].itemReceiverEmailAddress}/>
-                            </div>
-
-                            <div className="form-group col-md-12">
-                                <label htmlFor="deliveryAddress">Delivery Address</label>
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    id="deliveryAddress" 
-                                    defaultValue={Data[itemId - 1].deliveryAddress}/>
-                            </div>
-                            <div className="form-group col-md-12">
-                                <label htmlFor="driverName">Driver Name</label>
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    id="driverName" 
-                                    defaultValue={Data[itemId - 1].driverDetails.driverName}/>
-                            </div>
-                            
-                            <div className="form-group col-md-12">
-                                <label htmlFor="driverPhone">Driver Phone Number</label>
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    id="driverPhone" 
-                                    defaultValue={Data[itemId - 1].driverDetails.driverPhone}
-                                        
-                                    />
-                            </div>
-                            <div className="form-group col-md-12">
-                                <label htmlFor="deliveryProgress">Delivery Progress</label>
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    id="deliveryProgress" 
-                                    defaultValue={Data[itemId - 1].deliveryProgress}
-                                    disabled
-                                    />
-                            </div>
-                            <br/>
-
-                        {/* specify the button to display */}
+                        <br/>
                         {
                             Data[itemId - 1].deliveryProgress === 'request' 
                             
